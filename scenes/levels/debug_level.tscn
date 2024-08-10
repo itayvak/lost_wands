@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://lbahg4tcfma7"]
+
+[ext_resource type="PackedScene" uid="uid://cdq7pay7gasu3" path="res://scenes/player.tscn" id="1_1jqjb"]
+[ext_resource type="Texture2D" uid="uid://dx7tnps0nsxs5" path="res://icon.png" id="1_p8w3x"]
+[ext_resource type="PackedScene" uid="uid://cgqx8vhw80kyn" path="res://scenes/enemies/pink_sheep.tscn" id="3_ccsfo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwhns"]
+size = Vector2(346.5, 59.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xkfj"]
+size = Vector2(1636.5, 333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv3e6"]
+size = Vector2(1945.13, 333)
+
+[node name="DebugLevel" type="Node2D"]
+
+[node name="StaticBody" type="StaticBody2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="StaticBody"]
+position = Vector2(1356.5, 683)
+scale = Vector2(12.8516, 0.734378)
+texture = ExtResource("1_p8w3x")
+
+[node name="CollisionShape3" type="CollisionShape2D" parent="StaticBody"]
+position = Vector2(2775, 277)
+shape = SubResource("RectangleShape2D_nwhns")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="StaticBody"]
+position = Vector2(1352.75, 802)
+shape = SubResource("RectangleShape2D_8xkfj")
+
+[node name="Sprite2" type="Sprite2D" parent="StaticBody"]
+position = Vector2(107.547, 475.105)
+rotation = 0.434587
+scale = Vector2(12.938, 0.875)
+texture = ExtResource("1_p8w3x")
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="StaticBody"]
+position = Vector2(349, 710)
+rotation = 0.435457
+shape = SubResource("RectangleShape2D_gv3e6")
+
+[node name="Player" parent="." instance=ExtResource("1_1jqjb")]
+position = Vector2(-220, 73)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(0, -150)
+limit_top = 300
+limit_bottom = 300
+position_smoothing_enabled = true
+
+[node name="PinkSheep3" parent="." instance=ExtResource("3_ccsfo")]
+position = Vector2(1126, 612)
