@@ -2,9 +2,9 @@
 .godot/
 
 # IDEs
-.idea
-.vs
-.vscode
+.idea/
+.vs/
+.vscode/
 
 # Godot-specific ignores
 .import/
